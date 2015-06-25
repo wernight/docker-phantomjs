@@ -11,7 +11,7 @@
 
 ## Usage
 
-You may run it on the command line to start in PhantomJS JavaScript interactive shell:
+You may run it on the command line to start in PhantomJS [REPL](http://phantomjs.org/repl.html) (JavaScript interactive shell):
 
     $ docker run --rm wernight/phantomjs
 
