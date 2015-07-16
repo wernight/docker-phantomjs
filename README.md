@@ -17,7 +17,7 @@ You may run it on the command line to start in PhantomJS [REPL](http://phantomjs
 
 To start as 'Remote WebDriver mode' (embedded [GhostDriver](https://github.com/detro/ghostdriver)):
 
-    $ docker run -d -P 8910:8910 wernight/phantomjs phantomjs --webdriver=8910
+    $ docker run -d -p 8910:8910 wernight/phantomjs phantomjs --webdriver=8910
 
 You may then direct connect via Selenium for example in Java:
 
