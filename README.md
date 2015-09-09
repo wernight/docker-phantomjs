@@ -4,7 +4,7 @@
 
 [PhantomJS][phantomjs] version 2 is a headless WebKit browser, often used via [WebDriver][webdriver] for web system testing. This [Docker][docker] container is built from sources on Debian.
 
- * **Small**: Using [Debian image][debian] is below 100 MB (while Ubuntu is about 230 MB).
+ * **Small**: Using [Debian image][debian] is below 100 MB (while Ubuntu is about 230 MB), and removing packages used during build.
  * **Simple**: Exposes default port, easy to extend.
  * **Secure**: Runs as non-root UID/GID `72379` (selected randomly to avoid mapping to an existing user).
 
