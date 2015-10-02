@@ -24,8 +24,9 @@ RUN apt-get update \
         libpng-dev \
         libjpeg-dev \
         libqt5webkit5-dev \
-    && curl -L https://github.com/ariya/phantomjs/archive/2.0.0.tar.gz | tar -xzC /tmp \
-    && cd /tmp/phantomjs-2.0.0 \
+    && mkdir /tmp/phantomjs \
+    && curl -L https://github.com/ariya/phantomjs/archive/master.tar.gz | tar -xzC /tmp/phantomjs --strip-components=1 \
+    && cd /tmp/phantomjs \
     && ./build.sh --confirm --silent --jobs 2 \
     && mv bin/phantomjs /usr/local/bin \
     && cd \

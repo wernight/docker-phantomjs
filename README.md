@@ -1,8 +1,9 @@
 # PhantomJS
 
-[![](https://badge.imagelayers.io/wernight/phantomjs:latest.svg)](https://imagelayers.io/?images=wernight/phantomjs:latest 'Get your own badge on imagelayers.io')
+  * `latest` built from the [latest PhantomJS snapshot](https://github.com/ariya/phantomjs/commits/master) [![](https://badge.imagelayers.io/wernight/phantomjs:latest.svg)](https://imagelayers.io/?images=wernight/phantomjs:latest 'Get your own badge on imagelayers.io')
+  * `2`, `2.0`, `2.0.0` [![](https://badge.imagelayers.io/wernight/phantomjs:2.0.0.svg)](https://imagelayers.io/?images=wernight/phantomjs:2.0.0 'Get your own badge on imagelayers.io')
 
-[PhantomJS][phantomjs] version 2 is a headless WebKit browser, often used via [WebDriver][webdriver] for web system testing. This [Docker][docker] container is built from sources on Debian.
+[Docker][docker] container of [PhantomJS][phantomjs] is a headless WebKit browser, often used via [WebDriver][webdriver] for web system testing:
 
  * **Small**: Using [Debian image][debian] is below 100 MB (while Ubuntu is about 230 MB), and removing packages used during build.
  * **Simple**: Exposes default port, easy to extend.
@@ -18,7 +19,7 @@ Start PhantomJS in [REPL](http://phantomjs.org/repl.html):
     $ docker run --rm wernight/phantomjs
     >
 
-### Remove WebDriver
+### Remote WebDriver
 
 Start as 'Remote WebDriver mode' (embedded [GhostDriver](https://github.com/detro/ghostdriver)):
 
