@@ -8,14 +8,15 @@ MAINTAINER Werner Beroux <werner@beroux.com>
 RUN apt-get update \
     && apt-get install -y \
         build-essential \
+        ca-certificates \
         curl \
         g++ \
         flex \
         bison \
         gperf \
-        ruby \
         perl \
         python \
+        ruby \
         libsqlite3-dev \
         libfontconfig1-dev \
         libicu-dev \
@@ -23,7 +24,6 @@ RUN apt-get update \
         libssl-dev \
         libpng-dev \
         libjpeg-dev \
-        libqt5webkit5-dev \
     && mkdir /tmp/phantomjs \
     && curl -L https://github.com/ariya/phantomjs/archive/master.tar.gz | tar -xzC /tmp/phantomjs --strip-components=1 \
     && cd /tmp/phantomjs \
