@@ -1,4 +1,5 @@
-# PhantomJS
+PhantomJS
+=========
 
   * `latest` built from the [latest PhantomJS snapshot](https://github.com/ariya/phantomjs/commits/master) [![](https://badge.imagelayers.io/wernight/phantomjs:latest.svg)](https://imagelayers.io/?images=wernight/phantomjs:latest 'Get your own badge on imagelayers.io')
   * `2`, `2.0`, `2.0.0` [![](https://badge.imagelayers.io/wernight/phantomjs:2.0.0.svg)](https://imagelayers.io/?images=wernight/phantomjs:2.0.0 'Get your own badge on imagelayers.io')
@@ -10,16 +11,16 @@
  * **Secure**: Runs as non-root UID/GID `72379` (selected randomly to avoid mapping to an existing user).
 
 
-## Usage
+### Usage
 
-### JavaScript interactive shell
+#### JavaScript interactive shell
  
 Start PhantomJS in [REPL](http://phantomjs.org/repl.html):
 
     $ docker run --rm wernight/phantomjs
     >
 
-### Remote WebDriver
+#### Remote WebDriver
 
 Start as 'Remote WebDriver mode' (embedded [GhostDriver](https://github.com/detro/ghostdriver)):
 
@@ -48,7 +49,7 @@ To connect to it (some examples per language):
         driver.quit()
 
 
-## Feedbacks
+### Feedbacks
 
 Improvement ideas and pull requests are welcome via
 [Github Issue Tracker](https://github.com/wernight/docker-phantomjs/issues).
