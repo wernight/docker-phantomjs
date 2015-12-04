@@ -1,6 +1,3 @@
-PhantomJS
-=========
-
   * `latest` built from the [latest PhantomJS snapshot](https://github.com/ariya/phantomjs/commits/master) [![](https://badge.imagelayers.io/wernight/phantomjs:latest.svg)](https://imagelayers.io/?images=wernight/phantomjs:latest 'Get your own badge on imagelayers.io')
   * `2`, `2.0`, `2.0.0` [![](https://badge.imagelayers.io/wernight/phantomjs:2.0.0.svg)](https://imagelayers.io/?images=wernight/phantomjs:2.0.0 'Get your own badge on imagelayers.io')
 
