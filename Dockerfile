@@ -9,8 +9,8 @@ RUN apt-get update \
     && apt-get install -y \
         build-essential \
         ca-certificates \
-        curl \
         g++ \
+        git \
         flex \
         bison \
         gperf \
@@ -24,16 +24,15 @@ RUN apt-get update \
         libssl-dev \
         libpng-dev \
         libjpeg-dev \
-    && mkdir /tmp/phantomjs \
-    && curl -L https://github.com/ariya/phantomjs/archive/master.tar.gz | tar -xzC /tmp/phantomjs --strip-components=1 \
+    && git clone --recurse-submodules https://github.com/ariya/phantomjs /tmp/phantomjs \
     && cd /tmp/phantomjs \
-    && ./build.sh --confirm --silent --jobs 2 \
+    && ./build.py --confirm --silent --jobs 2 \
     && mv bin/phantomjs /usr/local/bin \
     && cd \
     && apt-get purge --auto-remove -y \
         build-essential \
-        curl \
         g++ \
+        git \
         flex \
         bison \
         gperf \
