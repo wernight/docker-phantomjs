@@ -6,7 +6,7 @@ MAINTAINER Werner Beroux <werner@beroux.com>
 # 3. Remove compile depdencies
 # We do all in a single commit to reduce the image size (a lot!)
 RUN apt-get update \
-    && apt-get install -y \
+    && apt-get install -y --no-install-recommends \
         build-essential \
         ca-certificates \
         g++ \
