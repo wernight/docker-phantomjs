@@ -26,7 +26,9 @@ RUN apt-get update \
         libjpeg-dev \
     && git clone --recurse-submodules https://github.com/ariya/phantomjs /tmp/phantomjs \
     && cd /tmp/phantomjs \
-    && ./build.py --confirm --silent --jobs 2 \
+    && git checkout -f tags/1.9.7 \
+    && git clean -fdx \
+    && ./build.sh --confirm --jobs 2 \
     && mv bin/phantomjs /usr/local/bin \
     && cd \
     && apt-get purge --auto-remove -y \
