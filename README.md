@@ -1,6 +1,6 @@
   * `latest` built from the [latest PhantomJS snapshot](https://github.com/ariya/phantomjs/commits/master) [![](https://badge.imagelayers.io/wernight/phantomjs:latest.svg)](https://imagelayers.io/?images=wernight/phantomjs:latest 'Get your own badge on imagelayers.io')
-  * `2`, `2.0`, `2.0.0` [![](https://badge.imagelayers.io/wernight/phantomjs:2.svg)](https://imagelayers.io/?images=wernight/phantomjs:2 'Get your own badge on imagelayers.io')
-  * `1`, `1.9`, `1.9.7` [![](https://badge.imagelayers.io/wernight/phantomjs:1.svg)](https://imagelayers.io/?images=wernight/phantomjs:1 'Get your own badge on imagelayers.io')
+  * `2.0.0`, `2.0`, `2` [![](https://badge.imagelayers.io/wernight/phantomjs:2.svg)](https://imagelayers.io/?images=wernight/phantomjs:2 'Get your own badge on imagelayers.io')
+  * `1.9.7`, `1.9`, `1` [![](https://badge.imagelayers.io/wernight/phantomjs:1.svg)](https://imagelayers.io/?images=wernight/phantomjs:1 'Get your own badge on imagelayers.io')
 
 [Docker][docker] container of [PhantomJS][phantomjs] is a headless WebKit browser, often used via [WebDriver][webdriver] for web system testing:
 
