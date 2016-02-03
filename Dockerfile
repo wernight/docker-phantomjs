@@ -7,8 +7,19 @@ MAINTAINER Werner Beroux <werner@beroux.com>
 # We do all in a single commit to reduce the image size (a lot!)
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        build-essential \
         ca-certificates \
+        libsqlite3-dev \
+        libfontconfig1-dev \
+        libicu-dev \
+        libfreetype6 \
+        libssl-dev \
+        libpng-dev \
+        libjpeg-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        build-essential \
         g++ \
         git \
         flex \
@@ -17,16 +28,9 @@ RUN apt-get update \
         perl \
         python \
         ruby \
-        libsqlite3-dev \
-        libfontconfig1-dev \
-        libicu-dev \
-        libfreetype6 \
-        libssl-dev \
-        libpng-dev \
-        libjpeg-dev \
     && git clone --recurse-submodules https://github.com/ariya/phantomjs /tmp/phantomjs \
     && cd /tmp/phantomjs \
-    && ./build.py --confirm --silent \
+    && ./build.py --release --confirm --silent >/dev/null \
     && mv bin/phantomjs /usr/local/bin \
     && cd \
     && apt-get purge --auto-remove -y \
