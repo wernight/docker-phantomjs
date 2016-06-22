@@ -3,8 +3,6 @@
   * [`2.0`, `2.0.0`](https://github.com/wernight/docker-phantomjs/blob/v2.0.0/Dockerfile)
   * [`1`, `1.9`, `1.9.7`](https://github.com/wernight/docker-phantomjs/blob/v1.9.7/Dockerfile)
 
-[![](https://badge.imagelayers.io/wernight/phantomjs:latest.svg)](https://imagelayers.io/?images=wernight/phantomjs:latest,wernight/phantomjs:2)
-
 [Docker][docker] container of [PhantomJS][phantomjs] is a headless WebKit browser, often used via [WebDriver][webdriver] for web system testing:
 
  * **Small**: Using [Debian image][debian] is below 100 MB (while Ubuntu is about 230 MB), and removing packages used during build.
