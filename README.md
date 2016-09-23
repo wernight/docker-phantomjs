@@ -17,7 +17,7 @@ This [Dockerized][docker] version of PhantomJS is:
 
  * **Small**: Using [Debian image][debian] (below 100 MB, while Ubuntu is about 230 MB), and removing packages used during build.
  * **Simple**: Exposes default port, easy to extend.
- * **Secure**: Runs as non-root UID/GID `72379` (selected randomly to avoid mapping to an existing user).
+ * **Secure**: Runs as non-root UID/GID `72379` (selected randomly to avoid mapping to an existing user) and uses [dumb-init](https://github.com/Yelp/dumb-init) to reap zombie processes.
 
 
 ## Usage
