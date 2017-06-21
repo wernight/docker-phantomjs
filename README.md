@@ -1,25 +1,35 @@
-  * `latest` built from the [latest PhantomJS snapshot](https://github.com/ariya/phantomjs/commits/master) [![](https://badge.imagelayers.io/wernight/phantomjs:latest.svg)](https://imagelayers.io/?images=wernight/phantomjs:latest 'Get your own badge on imagelayers.io')
-  * `2.1.1`, `2.0`, `2` [![](https://badge.imagelayers.io/wernight/phantomjs:2.svg)](https://imagelayers.io/?images=wernight/phantomjs:2 'Get your own badge on imagelayers.io')
-  * `2.0.0` [![](https://badge.imagelayers.io/wernight/phantomjs:2.svg)](https://imagelayers.io/?images=wernight/phantomjs:2 'Get your own badge on imagelayers.io')
-  * `1.9.7`, `1.9`, `1` [![](https://badge.imagelayers.io/wernight/phantomjs:1.svg)](https://imagelayers.io/?images=wernight/phantomjs:1 'Get your own badge on imagelayers.io')
+# Supported tags and respective `Dockerfile` links
 
-[Docker][docker] container of [PhantomJS][phantomjs] is a headless WebKit browser, often used via [WebDriver][webdriver] for web system testing:
+  * [`latest`](https://github.com/wernight/docker-phantomjs/blob/master/Dockerfile) built from the [latest PhantomJS snapshot](https://github.com/ariya/phantomjs/commits/master) [![](https://images.microbadger.com/badges/image/wernight/phantomjs.svg)](http://microbadger.com/images/wernight/phantomjs "Get your own image badge on microbadger.com")
+  * [`2`, `2.1`, `2.1.1`](https://github.com/wernight/docker-phantomjs/blob/v2.1.1/Dockerfile) [![](https://images.microbadger.com/badges/image/wernight/phantomjs:2.1.svg)](http://microbadger.com/images/wernight/phantomjs "Get your own image badge on microbadger.com")
+  * [`2.0`, `2.0.0`](https://github.com/wernight/docker-phantomjs/blob/v2.0.0/Dockerfile) [![](https://images.microbadger.com/badges/image/wernight/phantomjs:2.0.svg)](http://microbadger.com/images/wernight/phantomjs "Get your own image badge on microbadger.com")
+  * [`1`, `1.9`, `1.9.7`](https://github.com/wernight/docker-phantomjs/blob/v1.9.7/Dockerfile) [![](https://images.microbadger.com/badges/image/wernight/phantomjs:1.svg)](http://microbadger.com/images/wernight/phantomjs "Get your own image badge on microbadger.com")
 
- * **Small**: Using [Debian image][debian] is below 100 MB (while Ubuntu is about 230 MB), and removing packages used during build.
+## What is PhantomJS
+
+[PhantomJS][phantomjs] is a headless WebKit browser, often used via [WebDriver][webdriver] for web system testing.
+It's based on WebKit, runs JavaScript, and allows to take screenshots.
+
+
+## Features of this image
+
+This [Dockerized][docker] version of PhantomJS is:
+
+ * **Small**: Using [Debian image][debian] (below 100 MB, while Ubuntu is about 230 MB), and removing packages used during build.
  * **Simple**: Exposes default port, easy to extend.
- * **Secure**: Runs as non-root UID/GID `72379` (selected randomly to avoid mapping to an existing user).
+ * **Secure**: Runs as non-root UID/GID `72379` (selected randomly to avoid mapping to an existing user) and uses [dumb-init](https://github.com/Yelp/dumb-init) to reap zombie processes.
 
 
-### Usage
+## Usage
 
-#### JavaScript interactive shell
+### JavaScript interactive shell
  
 Start PhantomJS in [REPL](http://phantomjs.org/repl.html):
 
     $ docker run --rm wernight/phantomjs
     >
 
-#### Remote WebDriver
+### Remote WebDriver
 
 Start as 'Remote WebDriver mode' (embedded [GhostDriver](https://github.com/detro/ghostdriver)):
 
@@ -48,7 +58,7 @@ To connect to it (some examples per language):
         driver.quit()
 
 
-### Feedbacks
+## Feedbacks
 
 Improvement ideas and pull requests are welcome via
 [Github Issue Tracker](https://github.com/wernight/docker-phantomjs/issues).
