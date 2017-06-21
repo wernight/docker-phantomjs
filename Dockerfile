@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 
 # Install runtime dependencies
 RUN apt-get update \
@@ -14,6 +14,33 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
+    # Install QtWebKit.
+    # https://github.com/annulen/webkit/wiki/Building-QtWebKit-on-Linux
+ && git clone https://github.com/annulen/webkit.git /tmp/qtwebkit \
+ && cd /tmp/qtwebkit \
+ && WEBKIT_OUTPUTDIR=`pwd`/build/qt Tools/Scripts/build-webkit --qt --release --cmakeargs="-DCMAKE_PREFIX_PATH=~/Qt/5.7/gcc_64/" \
+ && ninja install
+ && export QMAKEPATH=
+
+ && mkdir -p WebKitBuild/Release \
+ && cd WebKitBuild/Release \
+ && cmake -DPORT=Qt -DCMAKE_BUILD_TYPE=Release ../.. \
+ #&& make -jN # Replace N with number of your CPU cores
+ && make install
+
+cmake \
+ninja-build \
+libfontconfig1-dev \
+libicu-dev \
+libsqlite3-dev \
+zlib1g-dev \
+libpng12-dev \
+libjpeg-dev \
+libxslt1-dev \
+libxml2-dev \
+libhyphen-dev \
+
+
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
         build-essential \
@@ -24,9 +51,12 @@ RUN apt-get update \
         gperf \
         perl \
         python \
+        #qt5-default \
         ruby \
  && git clone --recurse-submodules https://github.com/ariya/phantomjs /tmp/phantomjs \
  && cd /tmp/phantomjs \
+ && qmake
+ && make
  && ./build.py --release --confirm --silent >/dev/null \
  && mv bin/phantomjs /usr/local/bin \
 
