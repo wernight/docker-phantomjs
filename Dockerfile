@@ -36,5 +36,4 @@ USER phantomjs
 
 EXPOSE 8910
 
-ENTRYPOINT ["dumb-init"]
-CMD ["phantomjs"]
+ENTRYPOINT ["dumb-init", "phantomjs"]
