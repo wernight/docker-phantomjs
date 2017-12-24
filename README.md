@@ -26,7 +26,7 @@ This [Dockerized][docker] version of PhantomJS is:
  
 Start PhantomJS in [REPL](http://phantomjs.org/repl.html):
 
-    $ docker run --rm wernight/phantomjs
+    $ docker run -it --rm wernight/phantomjs
     >
 
 ### Remote WebDriver
