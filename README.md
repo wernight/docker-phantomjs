@@ -33,7 +33,7 @@ Start PhantomJS in [REPL](http://phantomjs.org/repl.html):
 
 Start as 'Remote WebDriver mode' (embedded [GhostDriver](https://github.com/detro/ghostdriver)):
 
-    $ docker run -d -p 8910:8910 wernight/phantomjs phantomjs --webdriver=8910
+    $ docker run -d -p 8910:8910 wernight/phantomjs --webdriver=8910
 
 To connect to it (some examples per language):
 
