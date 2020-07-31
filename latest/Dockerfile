@@ -22,11 +22,11 @@ ENV DUMB_INIT_VERSION ${DUMB_INIT_VERSION:-1.2.2}
 RUN set -x  \
     # Install official PhantomJS release
  && mkdir /tmp/phantomjs \
- && curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-${PHANTOM_JS_VERSION}.tar.bz2 \
+ && curl -Ls https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-${PHANTOM_JS_VERSION}.tar.bz2 \
         | tar -xj --strip-components=1 -C /tmp/phantomjs \
  && mv /tmp/phantomjs/bin/phantomjs /usr/local/bin \
     # Install dumb-init (to handle PID 1 correctly).
- && curl -Lo /tmp/dumb-init.deb https://github.com/Yelp/dumb-init/releases/download/v${DUMB_INIT_VERSION}/dumb-init_${DUMB_INIT_VERSION}_amd64.deb \
+ && curl -Lso /tmp/dumb-init.deb https://github.com/Yelp/dumb-init/releases/download/v${DUMB_INIT_VERSION}/dumb-init_${DUMB_INIT_VERSION}_amd64.deb \
  && dpkg -i /tmp/dumb-init.deb
 
 # PhantomJS requires  an OpenSSL config even if it's an empty one,
